@@ -1,0 +1,16 @@
+.footer{
+   background: var(--red);
+   height: 190px;
+}
+
+.footer p{
+   color: var(--white);
+   display: flex;
+   justify-content: center;
+
+   padding: 81px 205px 82px 213px;
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 18px;
+}
