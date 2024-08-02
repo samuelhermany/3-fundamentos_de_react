@@ -1,9 +1,10 @@
 import styles from "./Footer.module.css";
 
-export function Footer(){
+export function Footer(props){
    return (
       <footer className={styles.footer}>
-         <p>Todos os direitos reservados - 2024</p>
+         {/* Caso o titulo não exista, exibe o texto ao lado */}
+         <p>{props.description || "Desenvolvido por Samuel" }</p>
       </footer>
    )
  }

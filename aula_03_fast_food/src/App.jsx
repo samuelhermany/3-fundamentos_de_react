@@ -44,7 +44,7 @@ export function App() {
             description="Bebida"
           />
       </div>
-      <Footer/>
+      <Footer description='Todos os direitos reservados - 2024'/>
     </div>
   )
 }
