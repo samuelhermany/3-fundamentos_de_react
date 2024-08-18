@@ -1,0 +1,40 @@
+.card{
+   display: flex;
+   background: var(--red-100);
+   width: 379px;
+   height: 211px;
+   border-radius: 8px;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cardText{
+   width: 183px;
+}
+
+.card h1{
+   color: var(--white);
+   font-size: 32px;
+   font-weight: 700;
+   margin: 38px 209px 0 24px;
+}
+
+.subTitle button{
+   width: 159px;
+   height: 34px;
+   background: rgba(0, 0, 0, 0.1);
+   color: var(--white);
+   font-size: 14px;
+   border: transparent;
+   border-radius: 8px;
+   margin: 53px 0 0 24px;
+}
+
+.subTitle p {
+   color: var(--white);
+   font-size: 14px;
+   font-weight: 500;
+}
+
+img {
+   margin: 59px 0 6px 24px;
+}

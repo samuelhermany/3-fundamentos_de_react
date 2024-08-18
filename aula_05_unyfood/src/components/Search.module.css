@@ -1,0 +1,28 @@
+.search_container{
+   text-align: center;
+   margin-top: 109px;
+   margin-top: 6.688rem;/*107px*/
+   margin-bottom: 6.438rem;/*103px*/
+}
+
+.search_container h2{
+   font-size: 24px;
+   height: 2.563rem;/*41px*/
+   margin-bottom: 2.938rem ;/*47px*/
+}
+
+.input input{
+   width: 36.875rem; /*590px*/
+   height: 2.813rem;/*45px*/
+   border: 1px solid var(--white-200);
+   border-radius: 8px;
+   margin-left: 2.938rem ;/*47px*/
+}
+
+input::placeholder {
+   padding-left: 2.938rem; /*47px*/
+}
+
+.search_container Button{
+   margin-left: 1.75rem; /* 28px*/
+}

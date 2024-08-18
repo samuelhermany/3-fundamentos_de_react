@@ -1,0 +1,9 @@
+.btn{
+   background: var(--orange);
+   font-weight: 600;
+   width: 130px;
+   height: 45px;
+   color: var(--white);
+   border: transparent;
+   border-radius: 8px;
+}

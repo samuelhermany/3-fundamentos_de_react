@@ -1,0 +1,28 @@
+.card{
+   display: flex;
+   width: 16.813rem; /*269px*/
+   height: 8.375rem;/*134px*/
+   border: 1px solid red;
+   border-radius: 0.5rem;/*8px*/
+   background: var(--white);
+}
+
+.circulo{
+   width: 5.5rem; /*88px*/
+   height: 5.5rem; /*88px*/
+   border-radius: 50%;
+   background: red;
+   margin: 1.313rem 0.813rem 1.563rem 1.313rem; /*21px 13px 25px 21px*/
+}
+
+.title{
+   color: var(--gray-200);
+   font-weight: 700;
+   margin: 2.875rem 0 0.5rem 0; /* 46px 0 8px 0; */
+}
+
+.content{
+   font-size: 0.875rem; /*14px*/
+   font-weight: 300;
+   color: var(--gray-200);
+}
