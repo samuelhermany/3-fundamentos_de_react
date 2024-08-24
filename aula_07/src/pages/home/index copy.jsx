@@ -23,22 +23,6 @@ export function Home(){
       });
 
       setTarefas(copy);
-
-      setTitulo("");
-      setCategoria("");
-      setData("");
-      setDescricao("");
-   }
-
-   function apagarTarefa(indexTask) {
-      // alert(index);
-      // Retorna somente os index que forem diferentes do index selecionado
-      // Index selecionado foi removido
-      const arrayFiltrado = tarefas.filter(
-         (tarefas, index) => indexTask !== index
-      );
-
-      setTarefas(arrayFiltrado);
    }
 
   return (
@@ -83,24 +67,19 @@ export function Home(){
             <p>Total: 2 tarefas </p>
          </div>
          {/* {JSON.stringify(tarefas)} */}
-
-         {
-            tarefas.length > 0 ? <>
-               {tarefas.map((tarefa, index) => (
-                  <div className={styles.card} style={{marginBottom: 5}}>
-                     <div>
-                        <p className={styles.bold}>{tarefa.titulo}</p>
-                        <p>{tarefa.categoria}</p>
-                        <p>{tarefa.descricao}</p>
-                     </div>
-                     <div>
-                        <p className={styles.bold}>{tarefa.data}</p>
-                        <button onClick={() => apagarTarefa(index)}>Excluir</button>
-                     </div>
-                  </div>
-            ))}</>:
-            <p>Nenhum item para ser exibido</p>
-         }
+         {tarefas.map((tarefa) => (
+            <div className={styles.card} style={{marginBottom: 10}}>
+               <div>
+                  <p className={styles.bold}>{tarefa.titulo}</p>
+                  <p>{tarefa.categoria}</p>
+                  <p>{tarefa.descricao}</p>
+               </div>
+               <div>
+                  <p className={styles.bold}>{tarefa.data}</p>
+                  <button>Excluir</button>
+               </div>
+            </div>
+         ))}
       </div>
    </div>
   )
