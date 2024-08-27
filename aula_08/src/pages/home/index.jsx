@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import { FaBeer, FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+
 
 export function Home(){
    const [titulo, setTitulo] = useState("");
@@ -24,6 +27,9 @@ export function Home(){
 
       setTarefas(copy);
 
+      // salva os dados no banco de dados temporário do navegador
+      localStorage.setItem("@tarefas", JSON.stringify(copy))
+
       setTitulo("");
       setCategoria("");
       setData("");
@@ -41,11 +47,25 @@ export function Home(){
       setTarefas(arrayFiltrado);
    }
 
+   function recuperarTarefas() {
+      const tarefasString = localStorage.getItem("@tarefas");
+
+      if (tarefasString) {
+         const tarefasJSON = JSON.parse(tarefasString);
+         setTarefas(tarefasJSON);
+      }
+   }
+
+   useEffect(()=>{
+      recuperarTarefas();
+   }, [titulo]);
+
   return (
    <div className={styles.container}>
       <div className={styles.container_form}>
          <form className={styles.form} onSubmit={(event) => salvarTarefa(event)}>
             <h2>Nova tarefa</h2>
+            {/* <button type='button' onClick={recuperarTarefas}>Recuperar Tarefas</button> */}
 
             <input
                value={titulo}
@@ -95,7 +115,10 @@ export function Home(){
                      </div>
                      <div>
                         <p className={styles.bold}>{tarefa.data}</p>
-                        <button onClick={() => apagarTarefa(index)}>Excluir</button>
+                        <AiFillDelete className={styles.delete}
+                           color='red'
+                           size={40}
+                           onClick={() => apagarTarefa(index)} />
                      </div>
                   </div>
             ))}</>:
