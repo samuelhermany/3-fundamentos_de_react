@@ -1,5 +1,7 @@
-.category{
+.categories{
    display: flex;
    gap: 4.188rem;/*67px*/
    justify-content: center;
+   column-gap: 30px;
+   row-gap: 40px;
 }
