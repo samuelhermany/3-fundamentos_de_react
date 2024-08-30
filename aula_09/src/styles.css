@@ -6,9 +6,39 @@
 
 body, input, select, button{
    font-family: "Poppins", sans-serif;
-   /* color: #fff; */
+   /* font-size: 18px; */
 }
 
 body{
    background-color: #050915;
+   color: #fff;
+}
+
+table, th, td{
+   border-collapse: collapse;
+}
+
+tr:first-child {
+   border-top: 0.5px solid #858587; /* Linha horizontal acima do cabeçalho */
+   border-bottom: 0.5px solid #858587; /* Linha horizontal abaixo do cabeçalho */
+}
+
+tr:not(:first-child):not(:last-child) {
+   border-bottom: 0.5px solid #858587; /* Linha entre as linhas da tabela */
+}
+
+tr:last-child {
+   border-bottom: 0.5px solid #858587; /* Linha horizontal abaixo da última linha */
+}
+
+h1{
+   font-size: 24px;
+   font-weight: 700;
+   margin-top: 46px;
+   margin-bottom: 41px;
+}
+
+h3{
+   font-size: 20px;
+   font-weight: 500;
 }

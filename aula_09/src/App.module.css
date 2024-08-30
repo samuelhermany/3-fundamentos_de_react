@@ -24,3 +24,17 @@
    border: none;
    max-width: 200px;
 }
+
+.container_table{
+   margin-top: 40px;
+   display: flex;
+   flex-direction: column;
+}
+
+.table{
+   flex: 1;
+   margin-top: 20px;
+}
+.center{
+   text-align: center;
+}
