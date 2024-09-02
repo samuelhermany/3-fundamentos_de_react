@@ -1,0 +1,45 @@
+.inicio {
+   padding-top: 20px;
+   height: 950px;
+   display: flex;
+}
+
+.inicio div {
+   width: 70%;
+}
+
+.inicio div h1 {
+   margin-top: 300px;
+   margin-bottom: 20px;
+   color: #ff7925;
+   margin-left: 100px;
+   text-align: left;
+   padding: 0px;
+}
+
+.inicio div p {
+   margin: 0px 0px 50px 100px;
+   color: #3d3f3c;
+   width: 700px;
+   padding: 0px;
+   font-size: 22px;
+   text-align: left;
+}
+
+button {
+   width: 300px;
+   border: 1px solid red;
+   margin-left: 100px;
+   padding: 20px;
+   font-size: 20px;
+   border-radius: 10px;
+   color: white;
+   background-color: #ff7925;
+   box-shadow: 4px 8px 8px 5px rgba(0, 0, 0, 0.07);
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #3d3f3c;
+   color: #ff7925;
+}

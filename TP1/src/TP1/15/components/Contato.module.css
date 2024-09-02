@@ -1,0 +1,99 @@
+.contato {
+   padding-top: 80px;
+   height: 950px;
+   background-color: #ff7925;
+   align-items: center;
+   border-radius: 60px 60px 0px 0px;
+}
+
+.titulo {
+   color: #424242;
+   text-align: center;
+   padding-top: 20px;
+   font-size: 60px;
+}
+
+.contato div {
+   display: flex;
+   justify-content: center;
+}
+
+.contato ul li {
+   display: flex;
+   margin: 30px 0px 30px 0px;
+}
+
+.contato ul li a {
+   color: black;
+   font-size: 15px;
+}
+
+.contato ul li a:visited {
+   color: black;
+}
+
+.contato ul li a:hover {
+   color: white;
+}
+
+.contato ul li img {
+   width: 20px;
+   margin-right: 20px;
+}
+
+.meusContatos {
+   color: #3d3f3c;
+   font-size: 50px;
+   padding-bottom: 20px;
+}
+
+.inputTypes {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   padding: 15px;
+   margin: 20px 0px 0px 50px;
+   border-radius: 15px;
+   background-color: #dcdcdc6e;
+}
+
+.row {
+   display: flex;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.row input, textarea {
+   border: none;
+   width: 390px;
+   height: 50px;
+   border-radius: 12px;
+   text-indent: 10px;
+   font-size: 18px;
+}
+
+/* terceira linha */
+.row:nth-child(3){
+   margin-bottom: 0px;
+}
+
+/* primeiro item de cada linha */
+.row input[type="text"]:nth-child(1),
+.row input[type="text"]:nth-child(3),
+.row input[type="text"]:nth-child(5) ,textarea {
+    margin-right: 15px;
+}
+
+/* MENSAGEM */
+textarea {
+   width: calc(100% - 200px);
+   height: 145px;
+   padding: 5px;
+}
+
+.contato button {
+   width: 280px;
+   height: 70px;
+   margin-left: 5px;
+   margin-top: 70px;
+}

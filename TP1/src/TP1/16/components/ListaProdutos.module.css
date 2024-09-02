@@ -1,0 +1,11 @@
+.listaProdutos{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   /* height: 200px; */
+ }
+
+.item{
+  text-align: center;
+}

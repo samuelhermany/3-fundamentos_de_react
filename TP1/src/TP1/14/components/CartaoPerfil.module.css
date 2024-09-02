@@ -1,0 +1,47 @@
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+ }
+.card{
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 484px;
+   width: 310px;
+ }
+
+.img_background {
+   position: absolute;
+   border-radius: 10px;
+   box-shadow: 10px 10px 10px 10px gray;
+   width: 100%;
+   height: auto;
+}
+
+.img_perfil {
+   position: absolute;
+   border-radius: 50%;
+   width: 58%;
+   height: auto;
+}
+
+.titulo, .descricao {
+  position: absolute;
+  color: #000000;
+  text-align: center;
+}
+
+.titulo {
+  top: 81%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.descricao {
+  top: 87%;
+  font-size: 1rem;
+}

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+* {
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+   font-family: 'Ubuntu', sans-serif;
+}
+
+.eu {
+   font-weight: lighter;
+   font-size: 1.1em;
+   margin: auto 0px auto 0px;
+}
+
+nav {
+   margin-left: auto;
+   display: flex;
+   margin-top: auto;
+   margin-bottom: auto;
+}
+
+nav ul {
+   justify-content: space-between;
+   flex-direction: row;
+   list-style-type: none;
+   text-align: center;
+}
+
+li {
+   text-align: center;
+   padding-left: 45px;
+   padding-right: 45px;
+   /* width: fit-content; */
+   display: inline;
+   justify-content: right;
+}
+
+/* Último elemento da lista de menus (Contato) */
+nav ul li:last-child {
+   margin-right: 100px;
+   background-color: #ff7925;
+   border-radius: 25px;
+   padding: 10px 30px 10px 30px;
+}
+
+li:last-child :hover {
+   color: #3d3f3c;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+a:visited {
+   color: white;
+}
+
+a:hover {
+   color: #ff7925;
+}
+
+h1 {
+   color: rgb(0, 0, 0);
+   text-align: center;
+   padding-top: 20px;
+   font-size: 60px;
+}
+
+.tituloTipo1 {
+   color: #ff7925;
+}
+
+/* .tituloTipo2 {
+   color: #424242;
+} */
+/* SECTION INICIO (INICIO)*/
+.inicio {
+   padding-top: 20px;
+   height: 950px;
+   display: flex;
+}
+
+.inicio div {
+   width: 70%;
+}
+
+.inicio div h1 {
+   margin-top: 300px;
+   margin-bottom: 20px;
+   color: #ff7925;
+   margin-left: 100px;
+   text-align: left;
+   padding: 0px;
+}
+
+.inicio div p {
+   margin: 0px 0px 50px 100px;
+   color: #3d3f3c;
+   width: 700px;
+   padding: 0px;
+   font-size: 22px;
+   text-align: left;
+}
+
+button {
+   width: 300px;
+   border: 1px solid red;
+   margin-left: 100px;
+   padding: 20px;
+   font-size: 20px;
+   border-radius: 10px;
+   color: white;
+   background-color: #ff7925;
+   box-shadow: 4px 8px 8px 5px rgba(0, 0, 0, 0.07);
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #3d3f3c;
+   color: #ff7925;
+}
+/* SECTION INICIO (FIM)*/
+section p {
+   width: 1000px;
+   display: flex;
+   justify-content: center;
+   margin: auto;
+   padding: 30px;
+   color: white;
+   text-align: center;
+   font-size: 20px;
+}
+
+/* SECTION CONTATO (INICIO)*/
+.contato div {
+   display: flex;
+}
+
+.contatos ul {
+   margin-left: 300px;
+}
+
+.contato ul li {
+   display: flex;
+   margin: 30px 0px 30px 0px;
+}
+
+.contato ul li a {
+   color: black;
+}
+
+.contato ul li a:visited {
+   color: black;
+}
+
+.contato ul li a:hover {
+   color: white;
+}
+
+.contato ul li img {
+   width: 20px;
+   margin-right: 20px;
+}
+
+.meusContatos {
+   color: #3d3f3c;
+   font-size: 50px;
+   padding-bottom: 20px;
+}
+
+.inputTypes {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 845px;
+   padding: 10px;
+   margin: 20px 0px 0px 50px;
+   border-radius: 15px;
+   background-color: #dcdcdc6e;
+}
+
+input {
+   height: 50px;
+   border-radius: 12px;
+   border: none;
+   margin: 0px 20px 0px 0px;
+   text-indent: 10px;
+   font-size: 18px;
+}
+
+/* NOME COMPLETO e EMAIL e ASSUNTO */
+input:nth-child(1),
+input:nth-child(2),
+input:nth-child(3) {
+   width: 390px;
+}
+
+/* MENSAGEM */
+input:nth-child(5) {
+   width: 600px;
+   height: 145px;
+   margin-right: 0px;
+}
+
+.contato button {
+   width: 180px;
+   height: 60px;
+   margin-left: 20px;
+   margin-top: 85px;
+}
+
+/* SECTION CONTATO (FIM)*/
+/* SECTIONS */
+.projetos {
+   padding-top: 80px;
+   height: 950px;
+   background-color: #cdcdcd;
+   border-radius: 60px;
+}
+
+
+
+h1 {
+   color: rgb(0, 0, 0);
+   text-align: center;
+   padding-top: 20px;
+   font-size: 60px;
+}
+
+.tituloTipo1 {
+   color: #ff7925;
+}
