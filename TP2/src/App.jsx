@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+    return (
+        <main>
+            <a href="src/TP2/01/index.html">TP 1.1</a>
+            <a href="src/TP2/02/index.html">TP 1.2</a>
+            <a href="src/TP2/03/index.html">TP 1.3</a>
+            <a href="src/TP2/04/index.html">TP 1.4</a>
+            <a href="src/TP2/05/index.html">TP 1.5</a>
+            <a href="src/TP2/06/index.html">TP 1.6</a>
+            <a href="src/TP2/07/index.html">TP 1.7</a>
+            <a href="src/TP2/08/index.html">TP 1.8</a>
+            <a href="src/TP2/09/index.html">TP 1.9</a>
+            <a href="src/TP2/10/index.html">TP 1.10</a>
+            <a href="src/TP2/11/index.html">TP 1.11</a>
+            <a href="src/TP2/12/index.html">TP 1.12</a>
+            <a href="src/TP2/13/index.html">TP 1.13</a>
+            <a href="src/TP2/14/index.html">TP 1.14</a>
+            <a href="src/TP2/15/index.html">TP 1.15</a>
+            <a href="src/TP2/16/index.html">TP 1.16</a>
+        </main>
+    )
 }
-
-export default App
