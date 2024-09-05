@@ -16,16 +16,28 @@ export default function App(){
   function addAluno(event) {
     event.preventDefault();
 
-    // Obtém todos os alunos e adiciona um novo aluno
-    setAlunos([...alunos, formData])
+    if(formData.nome == "" || formData.matricula == "" ||
+       formData.curso == "" || formData.bimestre == "" ) {
+       alert("Informe todos os dados do aluno");
+    }else{
+      // Obtém todos os alunos e adiciona um novo aluno
+      setAlunos([...alunos, formData
+        // {
+        //  nome: formData.nome,
+        //  matricula: formData.matricula,
+        //  curso: formData.curso,
+        //  bimestre: formData.bimestre,
+        // }
+      ]);
 
-    // Limpa os valores dos campos
-    setFormData({
-      nome: "",
-      matricula: "",
-      curso: "",
-      bimestre: "",
-    })
+      // Limpa os valores dos campos
+      setFormData({
+        nome: "",
+        matricula: "",
+        curso: "",
+        bimestre: "",
+      })
+    }
   }
 
   function removerAluno(posicaoArray) {
@@ -34,6 +46,16 @@ export default function App(){
     );
 
     setAlunos(alunosFiltrado);
+
+    // Limpa os valores dos campos
+    setFormData({
+      nome: "",
+      matricula: "",
+      curso: "",
+      bimestre: "",
+    })
+
+    setIndexSelecionado(-1);
   }
 
   function preencherFormulario(aluno, index) {
@@ -67,6 +89,7 @@ export default function App(){
       curso: "",
       bimestre: "",
     })
+
     setIndexSelecionado(-1);
   }
 
