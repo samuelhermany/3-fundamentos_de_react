@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75vw;
+    margin: 15px auto;
+
+}
+
+.titulo{
+  color: red;
+  font-size: 32px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+img {
+  width: 75vw;
+  border-radius: 10px;
+}
+
+.paragrafo{
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .container{
+    width: 95vw;
+  }
+
+  .titulo{
+    color: #00c3ff;
+    text-decoration: underline;
+  }
+
+  img {
+    width: 95vw;
+  }
+}
+

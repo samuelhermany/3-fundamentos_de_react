@@ -1,0 +1,6 @@
+.footer {
+   text-align: center;
+   border-top: 2px solid #ddd;
+   position: relative; /* Para posicionar a linha de forma absoluta dentro do footer */
+   color:#5a5858;
+}

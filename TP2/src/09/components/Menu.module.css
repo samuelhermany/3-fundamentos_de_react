@@ -1,0 +1,70 @@
+.hamburguer {
+  padding-right:20px;
+}
+
+.menu {
+   background-color: #333;
+   color: white;
+   position: relative;
+   display:block;
+   display: flex;
+   justify-content: space-between;
+   align-items: start;
+   width: 100%;
+   align-items: center;
+   border-radius:19px;
+}
+
+.menu .imagen {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 20%;
+   padding: 10px;
+   box-sizing: border-box;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+/* botão hamburguer */
+.menu button {
+   background: none;
+   border: none;
+   color: white;
+   font-size: 34px;
+   cursor: pointer;
+   display: flex;
+   align-items: rig;
+   justify-content: flex-end;
+   width: 100%;
+}
+
+/* Esconde o menu */
+.menu ul {
+   display: none;
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   position: absolute;
+   top: 40px; /* Ajuste conforme necessário */
+   right: 0;
+   background-color: #333;
+   width: 100%;
+}
+
+.menu.show ul {
+   display: block;
+   width:50%;
+   margin-top:10px;
+}
+
+.menu ul li {
+   padding: 10px;
+   border-bottom: 1px solid #333;
+}
+
+.menu ul li a {
+   color: white;
+   text-decoration: none;
+   display: block;
+}

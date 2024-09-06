@@ -1,0 +1,50 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 20px;
+   margin-top: 100px;
+}
+
+.contato {
+   width: 60%;
+   padding: 20px;
+}
+
+.contato_titulo {
+   margin-bottom: 30px;
+}
+
+.contato_conteudo {
+   display: flex;
+   justify-content: space-between;
+}
+
+.contato_info {
+   width: 45%;
+}
+
+.contato_info > div {
+   margin-bottom: 20px;
+}
+
+.contato_info h3 {
+   margin: 0;
+   font-size: 1.2em;
+}
+
+.contato-info p {
+   margin: 0.5em 0 0;
+}
+
+.map {
+   width: 45%;
+}
+
+.map iframe {
+   width: 150%;
+   height: 100%;
+   border: none;
+   border-radius: 8px;
+   overflow: hidden;
+}

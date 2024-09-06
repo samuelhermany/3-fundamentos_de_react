@@ -1,0 +1,18 @@
+.card {
+  border: 6px solid #0d7df5;
+  padding: 10px;
+  margin: 40px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #080808;
+  text-align: center;
+}
+
+.text {
+  font-size: 1rem;
+  color: #080808;
+}
