@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-git rm --cached "Fundamentos de React.docx"
-git rm --cached "instrucoes_TP3.pdf"
+"Fundamentos de React.docx"
+"instrucoes_TP3.pdf"
