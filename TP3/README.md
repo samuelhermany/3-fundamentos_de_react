@@ -18,7 +18,7 @@
 |                    |                                        |             "state=Concluir"       |
 |--------------------|----------------------------------------|------------------------------------|
 |   - questao_08     |                                        |  - questao_08 = comp(7)            |
-|                    |                                        |             "state=Adcicionar"     |
+|                    |                                        |             "state=Adicionar"     |
 |--------------------|----------------------------------------|------------------------------------|
 |   - questao_09     |                                        |  - questao_09 = comp(7)            |
 |   - questao_10     |                                        |  - questao_10 = comp(7)            |
@@ -37,7 +37,28 @@
 |--------------------|----------------------------------------|------------------------------------|
 
 
+    - questao_06 (to do list)
+      criar componentes [TodoList, TodoItem (task)]
+    - questao_07 (to do list)
+      continuação anterior
+      criar checkBox(Concluir Tarefa) "state=Concluir"
+    - questao_08 (to do list)
+      continuação anterior
+      criar botão(Adicionar[geral]) "state=Adicionar"
+    - questao_09 (to do list)
+      continuação anterior
+      passagem de PROPS
+    - questao_10 (to do list)
+      continuação anterior
+      criar botão(Excluir[p/cada tarefa]) "state=Excluir"
+    - questao_11 (to do list)
+      continuação anterior
+      criar botão(Editar[p/cada tarefa]) "state=Editar"
 
+
+|--------------------------------------------------------------------------------------------------|
+    - FEITOS -
+    - 1 ATÉ 5
     - questao_01
       criar componente GREETING(name)
       passar valor com uma função map
@@ -59,6 +80,3 @@
       criar componente COUNTER
       criar botão de incremento
       criar botão de reset
-
-    - questao_06
-      to do list

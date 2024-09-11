@@ -1,12 +1,11 @@
 import React from "react"
 import styles from "./App.module.css";
-import { Teste } from "./components/Teste";
+import { List } from "./components/List";
 
 export default function App() {
   return (
     <div>
-      <h1>Exercício 1</h1>
-      <Teste />
+      <List />
     </div>
   )
 }

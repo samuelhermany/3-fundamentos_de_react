@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.item> input{
+  margin-right: 10px;
+}
+
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+/* Esconde o checkbox padrão */
+.item_checkbox {
+  -webkit-appearance: none; /* Remove o estilo padrão no WebKit browsers */
+  -moz-appearance: none; /* Remove o estilo padrão no Firefox */
+  appearance: none; /* Remove o estilo padrão em browsers modernos */
+  outline: none; /* Remove o contorno quando clicado */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: 2px solid #666;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Estilo quando o checkbox está marcado */
+.item_checkbox:checked {
+  background-color: #042ba0;
+}
+
+/* Adiciona um checkmark dentro do círculo */
+.item_checkbox:checked::before {
+  content: none;
+}
