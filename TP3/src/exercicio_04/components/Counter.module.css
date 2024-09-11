@@ -2,4 +2,26 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #fff;;
+  background-color: #050915;
+  font-family: "Poppins", sans-serif;
+}
+
+.container{
+  display: flex;
+  margin: 20px 50px;
+  align-items: center;
+}
+
+.incrementar {
+  font-size: 30px;
+  border-radius: 50%;
+  min-width: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: orange;
+  cursor: pointer;
+  margin: -50px 0 0 20px
 }

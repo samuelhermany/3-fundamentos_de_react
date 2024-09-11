@@ -40,6 +40,7 @@
 }
 
 .form input{
+  flex: 1;
   width: 400px;
   height: 30px;
   padding: 0 10px;
@@ -50,13 +51,12 @@
 }
 
 .form button{
-  flex: 1;
   height: 30px;
   border-radius: 5px;
   background-color: #1A2EDF;
   color: #fff;
   border: none;
-  max-width: 100px;
+  min-width: 100px;
 }
 
 .tr_container{

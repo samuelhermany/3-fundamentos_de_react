@@ -23,12 +23,16 @@ export function Counter() {
 
   return (
     <div>
-      <div>
+      <div className={styles.container}>
         <h1>Contador:</h1>
         <h2>{valor === "" ? 0 : valor}</h2>
       </div>
-    <button onClick={incrementar}>Incrementar</button>
-    <button onClick={reset}>Resetar</button>
+    <button
+      className={styles.incrementar}
+      onClick={incrementar}>+</button>
+    <button
+      className={styles.reset}
+      onClick={reset}>Resetar</button>
   </div>
   )
 }

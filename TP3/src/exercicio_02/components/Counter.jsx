@@ -18,12 +18,12 @@ export function Counter() {
 
   return (
     <div>
-      <div>
-        <h1>Contador:</h1>
+      <h1>Contador:</h1>
+      <div className={styles.container}>
+        <button className={styles.incrementar} onClick={incrementar}>+</button>
         <h2>{valor === "" ? 0 : valor}</h2>
       </div>
-    <button onClick={incrementar}>Incrementar</button>
-  </div>
+    </div>
   )
 }
 

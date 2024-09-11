@@ -19,12 +19,13 @@ export function Counter(props) {
   }
 
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
       <DisplayCount count={valor === "" ? 0 : valor} />
-      </div>
-    <button onClick={incrementar}>Incrementar</button>
-  </div>
+
+      <button
+       className={styles.incrementar}
+       onClick={incrementar}>+</button>
+    </div>
   )
 }
 
