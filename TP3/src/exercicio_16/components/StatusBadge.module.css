@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;;
+  background-color: #050915;
+  font-family: "Poppins", sans-serif;
+  margin: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ativo {
+  background-color: green;
+}
+
+.inativo {
+  background-color: gray;
+}
+
+.pendente {
+  background-color: orange;
+}
+
+.default {
+  background-color: lightgray; /* Cor padrão para status desconhecido */
+}
