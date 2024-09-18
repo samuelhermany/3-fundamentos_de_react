@@ -13,7 +13,7 @@ export function Home(){
     <div>
       <h1>Hello Home</h1>
 
-      <Link to='/produtos'>Ir para a tela de produtos </Link>
+      <Link to="/produtos/KA">Ir para a tela de produtos</Link>
       <br />
       <button onClick={navegarParaProduto}>Ir para produtos</button>
     </div>
