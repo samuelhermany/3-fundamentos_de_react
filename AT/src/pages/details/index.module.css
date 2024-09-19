@@ -1,36 +1,52 @@
-.container {
-}
-
 .content {
+  max-width: 80%;
+  max-height: 330px;
+  margin: 50px 0 0 50px;
   display: flex;
-
-  padding: 20px;
   gap: 20px;
 }
 
-.content .details p:first-child {
-  font-size: 1.5rem;
+.linha1{
+  gap: 20px;
+  display: flex;
+  object-fit: cover;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.linha2{
+  display: flex;
+  justify-content: space-between;
+  object-fit: cover;
+  height: 130px;
+}
+
+.details{
+  height: 100%;
+  /* max-height: 200px; */
+}
+.details h1 {
+  font-size: 30px;
   font-weight: bold;
 }
 
-.content img {
-  max-width: 300px;
+.details h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--green-300);
 }
 
-.content .details p:nth-of-type(2) {
-  font-size: 0.75rem;
-  font-weight: 300;
-}
-
-.content .details p:nth-of-type(3) {
-  font-size: 1.75rem;
-  font-weight: bold;
-}
-
-.content .details p:nth-of-type(4) {
+.details h3 {
+  font-size: 16px;
   font-weight: 400;
 }
 
-.content .details p:nth-of-type(5) {
-  margin-top: 40px;
+.details p{
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.6;
+  display: -webkit-box; /* Utiliza o layout de caixa flexível do WebKit */
+  -webkit-line-clamp: 9; /* Número de linhas a exibir antes de adicionar reticências */
+  -webkit-box-orient: vertical; /* Orienta a caixa em direção vertical */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o limite da caixa */
 }

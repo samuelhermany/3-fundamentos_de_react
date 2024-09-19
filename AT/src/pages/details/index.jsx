@@ -6,7 +6,6 @@ import styles from './index.module.css';
 import { Header } from '../../components/Header';
 
 export default function Details(){
-   console.log("teste");
    const {id} = useParams();
    const [details, setDetails] = useState({});
 
@@ -27,22 +26,26 @@ export default function Details(){
    }, [id]);
 
    return (
-      <div className={styles.container}>
+      <div>
          <Header />
          <div className={styles.content}>
-            <div>
-               <img src={details.url_img} alt={`Imagem de ${details.nome}`}/>
-               <img src={details.url_img} alt={`Imagem de ${details.nome}`}/>
-               <img src={details.url_img} alt={`Imagem de ${details.nome}`}/>
-               <img src={details.url_img} alt={`Imagem de ${details.nome}`}/>
-               <img src={details.url_img} alt={`Imagem de ${details.nome}`}/>
+            <div className={styles.imagens}>
+               <div className={styles.linha1}>
+                  <img src={details.url_img1} alt={`Imagem 1 de ${details.nome}`}/>
+                  <img src={details.url_img2} alt={`Imagem 2 de ${details.nome}`}/>
+               </div>
+               <div className={styles.linha2}>
+                  <img src={details.url_img3} alt={`Imagem 3 de ${details.nome}`}/>
+                  <img src={details.url_img4} alt={`Imagem 4 de ${details.nome}`}/>
+                  <img src={details.url_img5} alt={`Imagem 5 de ${details.nome}`}/>
+               </div>
             </div>
 
             <div className={styles.details}>
-               <p>{details.nome}</p>
-               <p>R$ {details.diaria}</p>
-               <p>{details.cidade}</p>
-               <p>{details.estado}</p>
+               <h1>{details.nome}</h1>
+               <h2>R$ {details.diaria}</h2>
+               <h3>{details.cidade}</h3>
+               <h3>{details.estado}</h3>
                <p>{details.descricao}</p>
             </div>
          </div>

@@ -18,12 +18,16 @@
    text-align: center;
    padding-top: 10px;
    color: var(--red-400);
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   box-sizing: border-box;       /* Inclui padding e border na largura total do elemento */
 }
 
 .img{
    /* display: inline-block; */
    width: 80%;
-   height: auto;
+   height: 45%;
    object-fit: cover;
    border-radius: 8px;
    margin: 10px 0;
