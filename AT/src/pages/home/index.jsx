@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './index.module.css';
 import { Card } from "../../components/Card";
 import { Header } from '../../components/Header';
-import FloatButton from '../../components/FloatButtton';
+import { FloatButton } from '../../components/FloatButtton';
 
 // https://www.booking.com/hotel/br/windsor-plaza-copacabana.pt-br.html?aid=311840&label=rent-megeve-EL_gAx4QcKTyil5EbVZ1nwS267187270521%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-297548737322%3Alp9198934%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YcLgEXIAJSu2ZjMcucyRMGI&sid=b09b61fe01a32454c1c903b70111eda7&all_sr_blocks=1946702_337991597_2_2_0;checkin=2024-10-05;checkout=2024-10-06;dest_id=1792;dest_type=district;dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=1946702_337991597_2_2_0;hpos=1;matching_block_id=1946702_337991597_2_2_0;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=1946702_337991597_2_2_0__42689;srepoch=1726716113;srpvid=88ec17a657b40037;type=total;ucfs=1&
 // https://www.booking.com/hotel/br/intercity-cidade-baixa.pt-br.html?aid=311840&label=rent-megeve-EL_gAx4QcKTyil5EbVZ1nwS267187270521%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-297548737322%3Alp9198934%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YcLgEXIAJSu2ZjMcucyRMGI&sid=b09b61fe01a32454c1c903b70111eda7&all_sr_blocks=209033301_277951135_2_2_0;checkin=2024-10-05;checkout=2024-10-06;dest_id=-663509;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=209033301_277951135_2_2_0;hpos=1;matching_block_id=209033301_277951135_2_2_0;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=209033301_277951135_2_2_0__30240;srepoch=1726716225;srpvid=013a00dd654202ff;type=total;ucfs=1&
@@ -189,11 +189,7 @@ export function Home(){
             </div>
 
             <FloatButton/>
-            {/* <button onClick={()=>setVisibilidadeModal(true)}>+</button> */}
          </div>
-         {/* <Modal open={visibildadeModal}>
-            <h1>Hello modal</h1>
-         </Modal> */}
       </div>
    )
 }

@@ -1,3 +1,23 @@
+.btn_editar{
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: var(--green-300);
+  padding: 0 10px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;font-weight: bold;
+}
+
+
+.btn_editar:hover {
+  background-color: var(--green-500);
+  color: var(--white);
+  transform: scale(1.05); /* Leve aumento no botão */
+}
+
+
 .content {
   max-width: 80%;
   max-height: 330px;

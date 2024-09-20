@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import styles from './FloatButton.module.css';
+import { ModalCadastro } from "./ModalCadastro";
+import { ModalConfirmacao } from "./ModalConfirmacao";
 
-import { Modal } from "react-responsive-modal";
-import 'react-responsive-modal/styles.css';
-
-const FloatButton = () => {
+export function FloatButton (){
+   // Define se o modal vai estar visivel inicialmente ou não
    const [visibilidadeModal, setVisibilidadeModal] = useState(false);
 
    const handleClick = () => {
-      setVisibilidadeModal(true);
-   };
-
-   const fecharModal = () => {
-      setVisibilidadeModal(false);
+      setVisibilidadeModal(!visibilidadeModal);
    };
 
    return (
@@ -22,13 +18,16 @@ const FloatButton = () => {
          </button>
          {/* Renderiza o Modal somente se visibilidadeModal for true */}
          {visibilidadeModal && (
-            <Modal open={visibilidadeModal} onClose={fecharModal}>
-               <h1>Hello modal</h1>
-               <button onClick={fecharModal}>Fechar</button>
-            </Modal>
+            // <ModalConfirmacao
+            //    open={visibilidadeModal}
+            //    onClose={handleClick}
+            // />
+            <ModalCadastro
+               open={visibilidadeModal}
+               onClose={handleClick}
+               titulo="Cadastrar"
+            />
          )}
       </>
    );
 };
-
-export default FloatButton;

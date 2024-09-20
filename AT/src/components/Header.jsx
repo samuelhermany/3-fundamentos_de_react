@@ -7,8 +7,7 @@ export function Header(){
             <li>Hopedagens</li>
             <li>Voos</li>
             <li>Aluguel de carros</li>
-            <li>Atrações</li>
-            <li>Aeroportos</li>
+            <li>Favoritos</li>
          </ul>
       </div>
    )

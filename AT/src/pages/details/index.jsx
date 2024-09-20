@@ -4,10 +4,18 @@ import { useEffect, useState } from "react";
 
 import styles from './index.module.css';
 import { Header } from '../../components/Header';
+import { ModalCadastro } from "../../components/ModalCadastro";
+import { BsDisplay } from 'react-icons/bs';
 
 export default function Details(){
    const {id} = useParams();
    const [details, setDetails] = useState({});
+   // Define se o modal vai estar visivel inicialmente ou não
+   const [visibilidadeModal, setVisibilidadeModal] = useState(false);
+
+   const handleClick = () => {
+      setVisibilidadeModal(!visibilidadeModal);
+   };
 
    async function carregarDetalhes() {
       const itensCarregados = localStorage.getItem("@hoteis");
@@ -28,6 +36,7 @@ export default function Details(){
    return (
       <div>
          <Header />
+         <button onClick={handleClick} className={styles.btn_editar}>Editar Hotel</button>
          <div className={styles.content}>
             <div className={styles.imagens}>
                <div className={styles.linha1}>
@@ -49,6 +58,14 @@ export default function Details(){
                <p>{details.descricao}</p>
             </div>
          </div>
+
+         {visibilidadeModal && (
+            <ModalCadastro
+               open={visibilidadeModal}
+               onClose={handleClick}
+               titulo="Editar"
+            />
+         )}
       </div>
    )
 }
