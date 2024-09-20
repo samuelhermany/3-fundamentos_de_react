@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 import styles from './index.module.css';
 import { Header } from '../../components/Header';
 import { ModalCadastro } from "../../components/ModalCadastro";
-import { BsDisplay } from 'react-icons/bs';
 
-export default function Details(){
+export function Details(){
+   const [hoteis, setHoteis] = useState([]);
    const {id} = useParams();
    const [details, setDetails] = useState({});
-   // Define se o modal vai estar visivel inicialmente ou não
    const [visibilidadeModal, setVisibilidadeModal] = useState(false);
 
    const handleClick = () => {
@@ -23,7 +22,7 @@ export default function Details(){
       if (itensCarregados) {
         const itensConvertidos = JSON.parse(itensCarregados);
 
-        // EncontrA o item com o ID correspondente
+        // Encontra o item com o ID correspondente
         const itemDetails = itensConvertidos.find(item => item.id === parseInt(id));
         setDetails(itemDetails);
       }
@@ -31,7 +30,7 @@ export default function Details(){
 
    useEffect(() => {
       carregarDetalhes();
-   }, [id]);
+   }, [id, visibilidadeModal]);
 
    return (
       <div>
@@ -65,6 +64,7 @@ export default function Details(){
                onClose={handleClick}
                titulo="Editar"
                id={id}
+               setHoteis={setHoteis}
             />
          )}
       </div>

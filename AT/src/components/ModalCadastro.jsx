@@ -6,7 +6,8 @@ import 'react-responsive-modal/styles.css';
 import styles from './ModalCadastro.module.css';
 
 
-export function ModalCadastro({ open, onClose, titulo, id }) {
+export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
+   // const [hoteis, setHoteis] = useState(() => JSON.parse(localStorage.getItem("@hoteis")) || []);
    const [error, setError] = useState("");
    const [formData, setFormData] = useState({
       nome: "",
@@ -45,26 +46,74 @@ export function ModalCadastro({ open, onClose, titulo, id }) {
       onClose();
    }
 
+   const editHotel = (e) =>{
+      e.preventDefault();
+
+      if (!formData.nome || !formData.classificacao || !formData.cidade ||
+         !formData.estado || !formData.diaria || !formData.url_img1 ||
+         !formData.descricao) {
+            setError("Todos os campos são obrigatórios!");
+            alert("Todos os campos são obrigatórios!");
+            return;
+       }
+
+      const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
+      const itemEncontradoIndex = hoteisEncontrados.findIndex(item => item.id === parseInt(id));
+
+      if (itemEncontradoIndex !== -1) {
+         const copiaHoteis = [...hoteisEncontrados];
+         // Atualiza o item encontrado com os dados do form
+         copiaHoteis[itemEncontradoIndex] = {...copiaHoteis[itemEncontradoIndex], ...formData};
+
+         // Salva a lista atualizada no local storage
+         localStorage.setItem("@hoteis", JSON.stringify(copiaHoteis));
+         setHoteis(copiaHoteis);
+      } else {
+          console.error("Item não encontrado!");
+      }
+
+      setFormData({
+         nome: "",
+         classificacao: "",
+         cidade: "",
+         estado: "",
+         precoDiaria: "",
+         urlImagem: "",
+         descricao: ""
+      });
+      onClose();
+   }
+
+   const updateHoteis = () => {
+      const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
+      setHoteis(hoteisEncontrados);
+   };
+
    useEffect(() => {
       if (id) {
-         const itensCarregados = JSON.parse(localStorage.getItem("@hoteis")) || [];
-         const itemEncontrado = itensCarregados.find(item => item.id === parseInt(id));
-         setFormData({...itemEncontrado });
+         const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
+         const itemEncontrado = hoteisEncontrados.find(item => item.id === parseInt(id));
+         setFormData({ ...itemEncontrado });
       }
-   }, [id, open]); // Reexecuta o efeito quando o ID ou o estado "open" mudar
+  }, [id, open]); // Reexecuta o efeito quando o ID, a lista de hotéis ou o estado "open" mudar
 
    return (
       <Modal
+         classNames={{ modal: styles.modal }}
          center
          showCloseIcon={false}
          open={open}
-         onClose={onClose}
-         classNames={{ modal: styles.modal }}
+         onClose={() => {
+            onClose();
+            updateHoteis();
+         }}
       >
          <div className={styles.container}>
             <h1 className={styles.titulo}>{titulo} Hotel</h1>
             {error && <p className={styles.error}>{error}</p>}
-            <form onSubmit={addHotel}>
+            <form onSubmit={(e) =>
+               id ? editHotel(e) : addHotel(e)}>
+
                <input
                   placeholder="Classificação"
                   value={formData.classificacao}
