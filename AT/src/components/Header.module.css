@@ -8,3 +8,13 @@
    line-height: 80px;
    justify-content: center;
 }
+
+.header a {
+   text-decoration: none; /* Remove o sublinhado */
+   color: inherit; /* Mantém a cor do texto como a cor herdada do pai */
+   cursor: pointer;
+}
+
+.header a:hover {
+   text-decoration: underline; /* Opcional: Adiciona o sublinhado ao passar o mouse */
+}

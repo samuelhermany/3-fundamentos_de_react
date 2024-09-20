@@ -3,7 +3,7 @@ import styles from './FloatButton.module.css';
 import { ModalCadastro } from "./ModalCadastro";
 import { ModalConfirmacao } from "./ModalConfirmacao";
 
-export function FloatButton (){
+export function FloatButton ({setHoteis}){
    // Define se o modal vai estar visivel inicialmente ou não
    const [visibilidadeModal, setVisibilidadeModal] = useState(false);
 
@@ -26,6 +26,7 @@ export function FloatButton (){
                open={visibilidadeModal}
                onClose={handleClick}
                titulo="Cadastrar"
+               setHoteis={setHoteis}
             />
          )}
       </>

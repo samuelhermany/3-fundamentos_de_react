@@ -5,24 +5,33 @@ import 'react-responsive-modal/styles.css';
 // import { ModalConfirmacao } from "./ModalConfirmacao";
 import styles from './ModalCadastro.module.css';
 
+const initialFormData = {
+   nome: "",
+   classificacao: "",
+   cidade: "",
+   estado: "",
+   diaria: "",
+   url_img1: "",
+   descricao: ""
+};
 
 export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
    // const [hoteis, setHoteis] = useState(() => JSON.parse(localStorage.getItem("@hoteis")) || []);
    const [error, setError] = useState("");
-   const [formData, setFormData] = useState({
-      nome: "",
-      classificacao: "",
-      cidade: "",
-      estado: "",
-      diaria: "",
-      url_img1: "",
-      descricao: ""
-   });
+   const [formData, setFormData] = useState(initialFormData);
+
+    // Função para resetar o formulário
+   const resetForm = () => {
+      setFormData(initialFormData);
+   };
 
    function addHotel(e) {
       e.preventDefault();
 
-      if (!formData.nome || !formData.classificacao || !formData.cidade || !formData.estado || !formData.precoDiaria || !formData.urlImagem || !formData.descricao) {
+      if (!formData.nome || !formData.classificacao ||
+         !formData.cidade || !formData.estado ||
+         !formData.diaria || !formData.url_img1 ||
+         !formData.descricao) {
          setError("Todos os campos são obrigatórios!");
          alert("Todos os campos são obrigatórios!");
          return;
@@ -30,19 +39,12 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
 
       const itensSalvos = JSON.parse(localStorage.getItem("@hoteis")) || [];
       // Adiciona o novo item à lista
-      const novaLista = [...itensSalvos, formData];
+      const novaListaHoteis = [...itensSalvos, formData];
 
       // Salva no localStorage
-      localStorage.setItem("@hoteis", JSON.stringify(novaLista));
-      setFormData({
-         nome: "",
-         classificacao: "",
-         cidade: "",
-         estado: "",
-         precoDiaria: "",
-         urlImagem: "",
-         descricao: ""
-      });
+      localStorage.setItem("@hoteis", JSON.stringify(novaListaHoteis));
+      setHoteis(novaListaHoteis);
+      resetForm();
       onClose();
    }
 
@@ -53,7 +55,8 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
          !formData.estado || !formData.diaria || !formData.url_img1 ||
          !formData.descricao) {
             setError("Todos os campos são obrigatórios!");
-            alert("Todos os campos são obrigatórios!");
+            alert(formData.url_img1);
+            // alert("Todos os campos são obrigatórios!");
             return;
        }
 
@@ -72,15 +75,7 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
           console.error("Item não encontrado!");
       }
 
-      setFormData({
-         nome: "",
-         classificacao: "",
-         cidade: "",
-         estado: "",
-         precoDiaria: "",
-         urlImagem: "",
-         descricao: ""
-      });
+      resetForm();
       onClose();
    }
 
@@ -104,8 +99,8 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
          showCloseIcon={false}
          open={open}
          onClose={() => {
-            onClose();
             updateHoteis();
+            onClose();
          }}
       >
          <div className={styles.container}>
