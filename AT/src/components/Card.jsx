@@ -26,8 +26,10 @@ export function Card({hotel, setHoteis}){
             <h2 className={styles.diaria}>R$ {diaria}</h2>
          </Link>
 
-         <FaMinusCircle className={styles.btn_apagar}
-            onClick={() => removerHotel(id)}/>
+         <div className={styles.tooltip}>
+            <FaMinusCircle className={styles.btn_apagar} onClick={() => removerHotel(id)} />
+            <span className={styles.tooltiptext}>Apagar hotel</span>
+         </div>
       </div>
    )
 }

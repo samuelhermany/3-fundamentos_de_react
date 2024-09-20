@@ -176,10 +176,9 @@ export function Home(){
          <div  className={styles.container}>
             <h1 className={styles.titulo}>Hotéis</h1>
             <div className={styles.hoteis}>
-               {hoteis.map((item, index) => (
+               {hoteis.map((item) => (
                   <div key={item.id}>
                      <Card
-                        key={item.id}
                         hotel={item}
                         setHoteis={setHoteis} />
 
@@ -189,9 +188,12 @@ export function Home(){
                ))}
             </div>
 
-            <FloatButton
-               setHoteis={setHoteis}
-            />
+            <div className={styles.tooltip}>
+               <FloatButton
+                  setHoteis={setHoteis}
+               />
+               <span className={styles.tooltiptext}>Adicionar hotel</span>
+            </div>
          </div>
       </div>
    )
