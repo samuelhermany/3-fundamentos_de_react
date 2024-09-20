@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-
+import styles from './Classificacao.module.css';
 
 export function Classificacao({rating}){
    const unRating = 5 - rating;
@@ -11,7 +11,7 @@ export function Classificacao({rating}){
     };
 
    return (
-      <div>
+      <div className={styles.container}>
          {Array.from({length: rating}, (item , i) => (
             <IoStar
                key={i}

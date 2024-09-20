@@ -175,15 +175,16 @@ export function Home(){
 
          <div  className={styles.container}>
             <h1 className={styles.titulo}>Hotéis</h1>
-            <div className={styles.produtos}>
+            <div className={styles.hoteis}>
                {hoteis.map((item, index) => (
                   <div key={item.id}>
                      <Card
                         key={item.id}
-                        produto={item} />
+                        hotel={item}
+                        setHoteis={setHoteis} />
 
-                     <button onClick={() => salvarLocal(item)}>Salvar</button>
-                     <button onClick={() => removerLocal(item.id)}>Apagar</button>
+                     {/* <button onClick={() => salvarLocal(item)}>Salvar</button>
+                     <button onClick={() => removerLocal(item.id)}>Apagar</button> */}
                   </div>
                ))}
             </div>
