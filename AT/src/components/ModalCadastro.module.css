@@ -69,3 +69,7 @@
    background-color: var(--green-100);
    transform: scale(1.05);
 }
+
+.inputDiaria {
+   position: relative; /* Necessário para o pseudo-elemento */
+}

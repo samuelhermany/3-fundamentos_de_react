@@ -64,6 +64,7 @@ export default function Details(){
                open={visibilidadeModal}
                onClose={handleClick}
                titulo="Editar"
+               id={id}
             />
          )}
       </div>
