@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Classificacao } from "./Classificacao";   // icone rating (estrelas)
+import { ModalConfirmacao } from './ModalConfirmacao';
 import { FaMinusCircle } from "react-icons/fa";    // icone excluir
 import { MdFavoriteBorder } from "react-icons/md"; // icone favoritos desmarcado
 import { MdFavorite } from "react-icons/md";       // icone favoritos marcado
 
 import styles from './Card.module.css';
-import { useState } from 'react';
 
 
 export function Card({hotel, setHoteis, isFavoritesPage}){
    const { id, nome, cidade, estado, rating, diaria, url_img1, favorito } = hotel;
-   // const [isFavorited, setIsFavorited] = useState(false);
+   // Estado para controlar a exibição do modal
+   const [modalConfirmacao, setModalConfirmacao] = useState(false);
 
    function removerHotel(id){
       const hoteis = JSON.parse(localStorage.getItem("@hoteis")) || [];
@@ -30,6 +31,18 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
       setHoteis(updatedHoteis);
    };
 
+    // Função chamada ao clicar no botão de remover
+    const handleRemoveClick = () => {
+      setModalConfirmacao(true); // Abre o modal
+   };
+
+   // Função chamada quando o usuário confirma ou cancela a remoção
+   const handleConfirm = (confirm) => {
+      setModalConfirmacao(false); // Fecha o modal
+      if (confirm) {
+         removerHotel(id); // Executa a função se o usuário confirmar
+      }
+   };
 
    return (
       <div className={styles.card}>
@@ -61,7 +74,15 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
             className={styles.tooltip}
             style={{ cursor: isFavoritesPage ? 'not-allowed' : 'pointer' }}
          >
-            <FaMinusCircle className={styles.btn_apagar} onClick={() => removerHotel(id)} />
+            <FaMinusCircle className={styles.btn_apagar} onClick={handleRemoveClick} />
+
+            {modalConfirmacao && (
+               <ModalConfirmacao
+                  open={modalConfirmacao}
+                  onClose={() => setModalConfirmacao(false)}
+                  onConfirm={() => handleConfirm(true)}
+                />
+            )}
             <span className={styles.tooltiptext}>Apagar hotel</span>
          </div>
       </div>
