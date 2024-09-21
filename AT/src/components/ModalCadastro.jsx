@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
+import { nanoid } from 'nanoid'
 
 // import { ModalConfirmacao } from "./ModalConfirmacao";
 import styles from './ModalCadastro.module.css';
 
 const initialFormData = {
+   id: "",
    nome: "",
-   classificacao: "",
+   rating: "",
    cidade: "",
    estado: "",
    diaria: "",
    url_img1: "",
-   descricao: ""
+   descricao: "",
 };
 
 export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
@@ -28,7 +30,7 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
    function addHotel(e) {
       e.preventDefault();
 
-      if (!formData.nome || !formData.classificacao ||
+      if (!formData.nome || !formData.rating ||
          !formData.cidade || !formData.estado ||
          !formData.diaria || !formData.url_img1 ||
          !formData.descricao) {
@@ -37,9 +39,9 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
          return;
        }
 
-      const itensSalvos = JSON.parse(localStorage.getItem("@hoteis")) || [];
+      const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
       // Adiciona o novo item à lista
-      const novaListaHoteis = [...itensSalvos, formData];
+      const novaListaHoteis = [...hoteisEncontrados, { ...formData, id: nanoid() }];
 
       // Salva no localStorage
       localStorage.setItem("@hoteis", JSON.stringify(novaListaHoteis));
@@ -51,17 +53,17 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
    const editHotel = (e) =>{
       e.preventDefault();
 
-      if (!formData.nome || !formData.classificacao || !formData.cidade ||
+      if (!formData.nome || !formData.rating || !formData.cidade ||
          !formData.estado || !formData.diaria || !formData.url_img1 ||
          !formData.descricao) {
             setError("Todos os campos são obrigatórios!");
-            alert(formData.url_img1);
-            // alert("Todos os campos são obrigatórios!");
+            alert("Todos os campos são obrigatórios!");
             return;
        }
 
       const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
-      const itemEncontradoIndex = hoteisEncontrados.findIndex(item => item.id === parseInt(id));
+      const itemEncontradoIndex = hoteisEncontrados.findIndex(item => item.id === id);
+      console.log("Índice encontrado:", itemEncontradoIndex); // Log do índice encontrado
 
       if (itemEncontradoIndex !== -1) {
          const copiaHoteis = [...hoteisEncontrados];
@@ -87,7 +89,8 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
    useEffect(() => {
       if (id) {
          const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
-         const itemEncontrado = hoteisEncontrados.find(item => item.id === parseInt(id));
+         const itemEncontrado = hoteisEncontrados.find(item => item.id === id);
+         console.log(itemEncontrado)
          setFormData({ ...itemEncontrado });
       }
   }, [id, open]); // Reexecuta o efeito quando o ID, a lista de hotéis ou o estado "open" mudar
@@ -111,8 +114,8 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
 
                <input
                   placeholder="Classificação"
-                  value={formData.classificacao}
-                  onChange={(e) => setFormData({ ...formData, classificacao: e.target.value })}
+                  value={formData.rating}
+                  onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
                />
                <input
                   placeholder="Nome"

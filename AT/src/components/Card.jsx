@@ -20,7 +20,10 @@ export function Card({hotel, setHoteis}){
          <Link to={`/details/${id}`}>
             <h1 className={styles.titulo}>{nome}</h1>
             <img className={styles.img} src={url_img1} alt="" />
-            <Classificacao className={styles.rating} rating={rating}/>
+            <Classificacao
+               className={styles.rating}
+               rating={rating}
+            />
             <p className={styles.texto}>{cidade}</p>
             <p className={styles.texto}>{estado}</p>
             <h2 className={styles.diaria}>R$ {diaria}</h2>

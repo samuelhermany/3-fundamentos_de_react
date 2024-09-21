@@ -8,15 +8,15 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;font-weight: bold;
+  text-decoration: underline;
 }
-
 
 .btn_editar:hover {
   background-color: var(--green-500);
   color: var(--white);
   transform: scale(1.05); /* Leve aumento no botão */
+  text-decoration: none;
 }
-
 
 .content {
   max-width: 80%;

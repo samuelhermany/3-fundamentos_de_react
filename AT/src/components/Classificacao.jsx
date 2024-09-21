@@ -4,7 +4,8 @@ import { IoIosStarOutline } from "react-icons/io";
 import styles from './Classificacao.module.css';
 
 export function Classificacao({rating}){
-   const unRating = 5 - rating;
+   const numericRating = parseFloat(rating); // Converte a string para número
+   const unRating = 5 - numericRating;
    const starStyle = {
       color: '#F1F155',
       size: 20,
@@ -12,7 +13,7 @@ export function Classificacao({rating}){
 
    return (
       <div className={styles.container}>
-         {Array.from({length: rating}, (item , i) => (
+         {Array.from({length: numericRating}, (item , i) => (
             <IoStar
                key={i}
                {...starStyle}

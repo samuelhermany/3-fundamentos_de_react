@@ -146,24 +146,25 @@ export function Home(){
       if (itensCarregados) {
         const itensConvertidos = JSON.parse(itensCarregados);
         setHoteis(itensConvertidos);
+        console.log(itensConvertidos[0])
       }
     }
 
-   function salvarLocal(item){
-      const itensSalvos = JSON.parse(localStorage.getItem("@hoteis")) || [];
+   // function salvarLocal(item){
+   //    const itensSalvos = JSON.parse(localStorage.getItem("@hoteis")) || [];
 
-      // Adiciona o novo item à lista
-      const novaLista = [...itensSalvos, item];
-      localStorage.setItem("@hoteis", JSON.stringify(novaLista));
-   }
+   //    // Adiciona o novo item à lista
+   //    const novaLista = [...itensSalvos, item];
+   //    localStorage.setItem("@hoteis", JSON.stringify(novaLista));
+   // }
 
-   function removerLocal(id){
-      const itensFiltrados = hoteis.filter((item) => item.id !== id);
+   // function removerLocal(id){
+   //    const itensFiltrados = hoteis.filter((item) => item.id !== id);
 
-      setHoteis(itensFiltrados);
+   //    setHoteis(itensFiltrados);
 
-      localStorage.setItem("@hoteis", JSON.stringify(itensFiltrados));
-   }
+   //    localStorage.setItem("@hoteis", JSON.stringify(itensFiltrados));
+   // }
 
    useEffect(() => {
       carregarHoteis();

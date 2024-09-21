@@ -12,6 +12,11 @@
    justify-content: center;
    cursor: pointer;
 }
+.card a {
+   text-decoration: none;
+   color: inherit; /* Faz com que a cor do texto herde da sua configuração de estilo */
+}
+
 
 .titulo{
    font-size: 16px;
@@ -83,6 +88,6 @@
    color: var(--red-500);
    font-size: 24px;
    cursor: pointer;
-   transform: scale(1.1); 
+   transform: scale(1.1);
    transition: transform 0.3s ease;
 }
