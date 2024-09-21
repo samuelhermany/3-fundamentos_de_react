@@ -114,3 +114,18 @@
    visibility: visible;
    opacity: 1;
 }
+
+.icon_favorito_div {
+   cursor: pointer;
+}
+
+.icon_favorito{
+   color: var(--green-500);
+   font-size: 25px;
+}
+
+.disabled {
+   cursor: not-allowed; /* Cursor desabilitado */
+   opacity: 0.5; /* Visualmente desabilitado */
+   pointer-events: none; /* Desabilitar cliques */
+}

@@ -109,10 +109,8 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
       >
          <div className={styles.container}>
             <h1 className={styles.titulo}>{titulo} Hotel</h1>
-            {error && <p className={styles.error}>{error}</p>}
-            <form onSubmit={(e) =>
-               id ? editHotel(e) : addHotel(e)}>
-
+            {/* {error && <p className={styles.error}>{error}</p>} */}
+            <form onSubmit={(e) => id ? editHotel(e) : addHotel(e)}>
                <input
                   placeholder="Classificação"
                   value={formData.rating}

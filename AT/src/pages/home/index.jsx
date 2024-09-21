@@ -149,22 +149,6 @@ export function Home(){
       }
     }
 
-   // function salvarLocal(item){
-   //    const itensSalvos = JSON.parse(localStorage.getItem("@hoteis")) || [];
-
-   //    // Adiciona o novo item à lista
-   //    const novaLista = [...itensSalvos, item];
-   //    localStorage.setItem("@hoteis", JSON.stringify(novaLista));
-   // }
-
-   // function removerLocal(id){
-   //    const itensFiltrados = hoteis.filter((item) => item.id !== id);
-
-   //    setHoteis(itensFiltrados);
-
-   //    localStorage.setItem("@hoteis", JSON.stringify(itensFiltrados));
-   // }
-
    useEffect(() => {
       carregarHoteis();
     }, []);
@@ -175,18 +159,21 @@ export function Home(){
 
          <div  className={styles.container}>
             <h1 className={styles.titulo}>Hotéis</h1>
-            <div className={styles.hoteis}>
-               {hoteis.map((item) => (
-                  <div key={item.id}>
-                     <Card
-                        hotel={item}
-                        setHoteis={setHoteis} />
-
-                     {/* <button onClick={() => salvarLocal(item)}>Salvar</button>
-                     <button onClick={() => removerLocal(item.id)}>Apagar</button> */}
-                  </div>
-               ))}
-            </div>
+            {hoteis.length <= 0 ? (
+               <p>Não há hotéis cadastrados</p>
+            ) : (
+               <div className={styles.hoteis}>
+                  {hoteis.map((item) => (
+                     <div key={item.id}>
+                        <Card
+                           hotel={item}
+                           setHoteis={setHoteis}
+                           isFavoritesPage={false}
+                        />
+                     </div>
+                  ))}
+               </div>
+            )}
 
             <div className={styles.tooltip}>
                <FloatButton

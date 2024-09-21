@@ -8,7 +8,7 @@ export function Header(){
             <Link to={`/`}>
                <li>Home</li>
             </Link>
-            <Link to="/favoritos">
+            <Link to="/favorites">
                <li>Favoritos</li>
             </Link>
          </ul>

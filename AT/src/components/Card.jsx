@@ -9,9 +9,9 @@ import styles from './Card.module.css';
 import { useState } from 'react';
 
 
-export function Card({hotel, setHoteis}){
+export function Card({hotel, setHoteis, isFavoritesPage}){
    const { id, nome, cidade, estado, rating, diaria, url_img1, favorito } = hotel;
-   const [isFavorited, setIsFavorited] = useState(false);
+   // const [isFavorited, setIsFavorited] = useState(false);
 
    function removerHotel(id){
       const hoteis = JSON.parse(localStorage.getItem("@hoteis")) || [];
@@ -21,24 +21,26 @@ export function Card({hotel, setHoteis}){
    }
 
    const toggleFavorite = (e) => {
-      const newFavoritedState = !isFavorited;
-      setIsFavorited(newFavoritedState);
-
-      // Atualiza o localStorage
       const hoteis = JSON.parse(localStorage.getItem("@hoteis")) || [];
       const updatedHoteis = hoteis.map(item =>
-         item.id === id ? { ...item, favorito: newFavoritedState } : item
+         item.id === id ? { ...item, favorito: !favorito } : item
       );
 
       localStorage.setItem("@hoteis", JSON.stringify(updatedHoteis));
-      setHoteis(updatedHoteis)
+      setHoteis(updatedHoteis);
    };
+
 
    return (
       <div className={styles.card}>
          <div className={styles.tooltip_top}>
-            <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>
-               {isFavorited ? <MdFavorite color='green' size={24} /> : <MdFavoriteBorder color='green' size={24}/>}
+            <div
+               onClick={isFavoritesPage ? null : toggleFavorite}
+               className={styles.icon_favorito_div}
+               style={{ cursor: isFavoritesPage ? 'not-allowed' : 'pointer' }}
+            >
+               {favorito ? <MdFavorite className={styles.icon_favorito} /> :
+                  <MdFavoriteBorder className={styles.icon_favorito}/>}
             </div>
             <span className={styles.tooltiptext_top}>Adicionar Favorito</span>
          </div>
@@ -55,7 +57,10 @@ export function Card({hotel, setHoteis}){
             <h2 className={styles.diaria}>R$ {diaria}</h2>
          </Link>
 
-         <div className={styles.tooltip}>
+         <div
+            className={styles.tooltip}
+            style={{ cursor: isFavoritesPage ? 'not-allowed' : 'pointer' }}
+         >
             <FaMinusCircle className={styles.btn_apagar} onClick={() => removerHotel(id)} />
             <span className={styles.tooltiptext}>Apagar hotel</span>
          </div>

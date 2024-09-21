@@ -1,20 +1,19 @@
 .header{
    display: flex;
-   gap: 10px;
+   gap: 50px;
    background-color: var(--green-300);
    color: var(--white);
    width: 100%;
-   padding: 0 10px;
    line-height: 80px;
    justify-content: center;
 }
 
 .header a {
-   text-decoration: none; /* Remove o sublinhado */
+   text-decoration: none;
    color: inherit; /* Mantém a cor do texto como a cor herdada do pai */
    cursor: pointer;
 }
 
 .header a:hover {
-   text-decoration: underline; /* Opcional: Adiciona o sublinhado ao passar o mouse */
+   text-decoration: underline;
 }
