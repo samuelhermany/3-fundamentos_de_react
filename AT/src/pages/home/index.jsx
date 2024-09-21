@@ -146,7 +146,6 @@ export function Home(){
       if (itensCarregados) {
         const itensConvertidos = JSON.parse(itensCarregados);
         setHoteis(itensConvertidos);
-        console.log(itensConvertidos[0])
       }
     }
 

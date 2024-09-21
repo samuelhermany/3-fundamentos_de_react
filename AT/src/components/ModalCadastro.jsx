@@ -15,6 +15,7 @@ const initialFormData = {
    diaria: "",
    url_img1: "",
    descricao: "",
+   favoritoo: false,
 };
 
 export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
