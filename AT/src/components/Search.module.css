@@ -1,0 +1,17 @@
+.container{
+   width: 50%;
+   margin-bottom: 10px;
+}
+.container input, select{
+   margin-bottom: 23px;
+   background-color: var(--gray-100);
+   border: 1px solid var(--gray-200);
+   border-radius: 8px;
+   height: 40px;
+   padding-left: 11px;
+}
+
+.container input{
+   width: 210px;
+   margin-right: 10px;
+}

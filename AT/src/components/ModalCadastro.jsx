@@ -64,7 +64,6 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
 
       const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
       const itemEncontradoIndex = hoteisEncontrados.findIndex(item => item.id === id);
-      console.log("Índice encontrado:", itemEncontradoIndex); // Log do índice encontrado
 
       if (itemEncontradoIndex !== -1) {
          const copiaHoteis = [...hoteisEncontrados];
@@ -91,7 +90,6 @@ export function ModalCadastro({ open, onClose, titulo, id, setHoteis }) {
       if (id) {
          const hoteisEncontrados = JSON.parse(localStorage.getItem("@hoteis")) || [];
          const itemEncontrado = hoteisEncontrados.find(item => item.id === id);
-         console.log(itemEncontrado)
          setFormData({ ...itemEncontrado });
       }
   }, [id, open]); // Reexecuta o efeito quando o ID, a lista de hotéis ou o estado "open" mudar
