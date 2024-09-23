@@ -18,10 +18,6 @@ export function FloatButton ({setHoteis}){
          </button>
          {/* Renderiza o Modal somente se visibilidadeModal for true */}
          {visibilidadeModal && (
-            // <ModalConfirmacao
-            //    open={visibilidadeModal}
-            //    onClose={handleClick}
-            // />
             <ModalCadastro
                open={visibilidadeModal}
                onClose={handleClick}

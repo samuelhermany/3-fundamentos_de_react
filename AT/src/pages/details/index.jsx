@@ -10,9 +10,14 @@ const img_NotFoun = "https://as1.ftcdn.net/v2/jpg/04/75/01/08/1000_F_475010836_q
 
 export function Details(){
    const [hoteis, setHoteis] = useState([]);
-   const {id} = useParams();
    const [details, setDetails] = useState({});
    const [visibilidadeModal, setVisibilidadeModal] = useState(false);
+   const { id } = useParams();
+
+   const [isDarkTheme, setIsDarkTheme] = useState(() => {
+      const savedTheme = localStorage.getItem('isDarkTheme');
+      return savedTheme ? JSON.parse(savedTheme) : false;
+   });
 
    const handleClick = () => {
       setVisibilidadeModal(!visibilidadeModal);
@@ -30,13 +35,22 @@ export function Details(){
       }
     }
 
+    const toggleTheme = () => {
+      setIsDarkTheme((prev) => {
+        const newTheme = !prev;
+        localStorage.setItem('isDarkTheme', JSON.stringify(newTheme));
+        return newTheme;
+      });
+   };
+
    useEffect(() => {
       carregarDetalhes();
    }, [id, visibilidadeModal]);
 
    return (
-      <div>
-         <Header />
+      <div className={`${styles.container} ${!isDarkTheme ? 'theme-light' : 'theme-dark'}`}>
+         <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+         
          <button onClick={handleClick} className={styles.btn_editar}>Editar Hotel</button>
          <div className={styles.content}>
             <div className={styles.imagens}>

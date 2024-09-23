@@ -3,9 +3,8 @@
    width: 253px;
    height: 355px;
    border-radius: 8px;
-   background: var(--white);
    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
-   padding: 10px;
+   padding: 0 10px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -23,16 +22,27 @@
    text-align: center;
    height: 64px;
    justify-content: center;
-   padding: 10px 10px 0 0;
+   /* padding: 10px 10px 0 0; */
    color: var(--red-400);
 }
 
-.img{
-   width: 100%;
-   height: 45%;
-   /* object-fit: fill; */
+.img_container{
+   width: 100%; /* A div ocupa 100% do espaço disponível */
+   height: 40%;
+   display: flex;
+   align-items: center;
    border-radius: 8px;
-   /* margin: 10px 0; */
+   overflow: hidden;
+   margin-bottom: 15px;
+}
+
+.img_container img{
+   width: 100%;
+   height: auto;
+   padding: 1px;
+   border-radius: 8px;
+   height: auto; /* Mantém a proporção da imagem */
+   object-fit: contain;
 }
 .texto{
    display: flex;
@@ -47,6 +57,7 @@
 }
 .rating{
    text-align: center;
+   margin-top: 5px;
 }
 
 .tooltip {
@@ -92,7 +103,7 @@
 .tooltip_top {
    position: absolute; /* Permite que o tooltip se posicione em relação a este elemento */
    right: 8px;
-   top: 0;
+   top: 5px;
 }
 
 .tooltiptext_top {

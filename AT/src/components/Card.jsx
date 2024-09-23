@@ -7,9 +7,9 @@ import { MdFavoriteBorder } from "react-icons/md"; // icone favoritos desmarcado
 import { MdFavorite } from "react-icons/md";       // icone favoritos marcado
 
 import styles from './Card.module.css';
+import "../global.css"
 
-
-export function Card({hotel, setHoteis, isFavoritesPage}){
+export function Card({hotel, setHoteis, isFavoritesPage, isDarkTheme}){
    const { id, nome, cidade, estado, rating, diaria, url_img1, favorito } = hotel;
    // Estado para controlar a exibição do modal
    const [modalConfirmacao, setModalConfirmacao] = useState(false);
@@ -33,6 +33,7 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
 
     // Função chamada ao clicar no botão de remover
     const handleRemoveClick = () => {
+      console.log("Handle Remove Click");
       setModalConfirmacao(true); // Abre o modal
    };
 
@@ -45,7 +46,7 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
    };
 
    return (
-      <div className={styles.card}>
+      <div className={`${styles.card} ${!isDarkTheme ? 'theme-light-card' : 'theme-dark-card'}`}>
          <div className={styles.tooltip_top}>
             <div
                onClick={isFavoritesPage ? null : toggleFavorite}
@@ -57,21 +58,20 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
             </div>
             <span className={styles.tooltiptext_top}>Adicionar Favorito</span>
          </div>
-
-         <Link to={`/details/${id}`}>
-            <h1 className={styles.titulo}>{nome}</h1>
-            <img className={styles.img} src={url_img1} alt="" />
-            <Classificacao
-               className={styles.rating}
-               rating={rating}
-            />
-            <p className={styles.texto}>{cidade}</p>
-            <p className={styles.texto}>{estado}</p>
-            <h2 className={styles.diaria}>R$ {diaria}</h2>
+         <Link to={`/details/${id}/${isDarkTheme}`}>
+         <h1 className={styles.titulo}>{nome}</h1>
+         <div className={styles.img_container}>
+            <img src={url_img1} alt="" />
+         </div>
+         <Classificacao
+            className={styles.rating}
+            rating={rating}
+         />
+         <p className={styles.texto}>{cidade}</p>
+         <p className={styles.texto}>{estado}</p>
+         <h2 className={styles.diaria}>R$ {diaria}</h2>
          </Link>
-
-         <div
-            className={styles.tooltip}
+         <div className={styles.tooltip}
             style={{ cursor: isFavoritesPage ? 'not-allowed' : 'pointer' }}
          >
             <FaMinusCircle className={styles.btn_apagar} onClick={handleRemoveClick} />
@@ -81,7 +81,7 @@ export function Card({hotel, setHoteis, isFavoritesPage}){
                   open={modalConfirmacao}
                   onClose={() => setModalConfirmacao(false)}
                   onConfirm={() => handleConfirm(true)}
-                />
+               />
             )}
             <span className={styles.tooltiptext}>Apagar hotel</span>
          </div>

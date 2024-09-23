@@ -1,5 +1,10 @@
+.cone{
+   height: 100vh;
+}
 .container{
    padding: 30px;
+   /* background-color: var(--header-bg); */
+   /* color: var(--white); */
 }
 
 .hoteis{
