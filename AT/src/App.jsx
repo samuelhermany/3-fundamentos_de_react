@@ -7,13 +7,6 @@ import { Favorites } from './pages/favorites';
 import './global.css'; // Usando global.css para os estilos
 
 export function App () {
-   const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-   // Aplicar a classe ao body quando o tema mudar
-   useEffect(() => {
-       document.body.className = isDarkTheme ? 'theme-dark' : 'theme-light'; // Corrigido
-   }, [isDarkTheme]);
-
    const router = createBrowserRouter([
        {
            path: "/",
