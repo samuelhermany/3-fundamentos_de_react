@@ -50,7 +50,7 @@ export function Details(){
    return (
       <div className={`${styles.container} ${!isDarkTheme ? 'theme-light' : 'theme-dark'}`}>
          <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-         
+
          <button onClick={handleClick} className={styles.btn_editar}>Editar Hotel</button>
          <div className={styles.content}>
             <div className={styles.imagens}>

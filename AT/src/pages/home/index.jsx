@@ -59,6 +59,7 @@ export function Home(){
    };
 
    useEffect(() => {
+      document.body.className = isDarkTheme ? "theme-dark" : "theme-light";
       carregarHoteis();
    }, []);
 
